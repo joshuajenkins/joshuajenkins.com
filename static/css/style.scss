@@ -44,6 +44,7 @@ a:hover {
 	margin: 0;
 	padding: 0;
 	color: darken($light-grey, 10%);
+	display: none;
 	
 	span {
 		opacity: 0.5;
@@ -68,6 +69,9 @@ a:hover {
 }
 
 @media (min-width: 666px) and (max-width: 666px) {
+	.photo-credit {
+		display: none;
+	}
 	.img {
 		background: #7f9099 url('../img/666.jpg') no-repeat center center;
 		background-size: cover;
@@ -119,6 +123,9 @@ li {
 }
 
 @media (min-width: 550px) {
+	.photo-credit {
+		display: block;
+	}
 	.photo, .img {
 		height: $large-photo-height;
 	}

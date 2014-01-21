@@ -212,7 +212,8 @@ a:hover {
   right: 10px;
   margin: 0;
   padding: 0;
-  color: #bfc7c6; }
+  color: #bfc7c6;
+  display: none; }
   .photo-credit span {
     opacity: 0.5; }
   .photo-credit a {
@@ -229,6 +230,9 @@ a:hover {
   background-size: cover; }
 
 @media (min-width: 666px) and (max-width: 666px) {
+  .photo-credit {
+    display: none; }
+
   .img {
     background: #7f9099 url("../img/666.jpg") no-repeat center center;
     background-size: cover; } }
@@ -267,6 +271,9 @@ li {
   text-align: center; }
 
 @media (min-width: 550px) {
+  .photo-credit {
+    display: block; }
+
   .photo, .img {
     height: 450px; }
 
