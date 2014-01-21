@@ -4,8 +4,8 @@ $text-color: #031928;
 $light-grey: #dadfde;
 $text-grey: #809097;
 
-$small-photo-height: 250px;
-$large-photo-height: 350px;
+$small-photo-height: 300px;
+$large-photo-height: 450px;
 
 body {
 	font-size: 100%;
@@ -14,14 +14,56 @@ body {
 	font-family: "adelle-1","adelle-2", serif;
 }
 
+p {
+	color: $text-grey;
+	margin: 0 0 1em 0;
+}
+
+a:link, a:visited {
+	color: $text-color;
+	border-bottom: 1px solid transparent;
+	text-decoration: none;
+	transition: border-color .5s linear;
+}
+
+a:hover {
+	color: $text-color;
+	border-bottom: 1px solid $text-color;
+}
+
 .photo {
 	width: 100%;
 	height: $small-photo-height;
+	position: relative;
+}
+
+.photo-credit {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	margin: 0;
+	padding: 0;
+	color: darken($light-grey, 10%);
+	
+	span {
+		opacity: 0.5;
+	}
+
+	a {
+		opacity: 0.5;
+		color: darken($light-grey, 10%);
+
+		&:hover {
+			transition: opacity .5s linear;
+			opacity: 1;
+			border-color: darken($light-grey, 10%);
+		}
+	}
 }
 
 .img {
 	height: $small-photo-height;
-	background: #7f9099 url('../img/woods.jpg') no-repeat center center;
+	background: #7f9099 url('../img/friendly.jpg') no-repeat center 12%;
 	background-size: cover;
 }
 
@@ -34,7 +76,7 @@ body {
 
 @media (min-width: 1100px) {
 	.img {
-		background: #7f9099 url('../img/woods-big.jpg') no-repeat center center;
+		background: #7f9099 url('../img/friendly-big.jpg') no-repeat center 12%;
 		background-size: cover;
 	}
 }
@@ -42,11 +84,11 @@ body {
 h1 {
 	width: 90%;
 	margin: 0 auto 1em auto;
-	padding: 0;
+	padding: 1em 0;
 	text-align: center;
 	border-bottom: 1px solid $light-grey;
 	font-size: 2em;
-	line-height: 4em;
+	line-height: 1.55em;
 	font-weight: normal;
 }
 
@@ -76,29 +118,13 @@ li {
 	text-align: center;
 }
 
-p {
-	color: $text-grey;
-	margin: 0 0 1em 0;
-}
-
-a:link, a:visited {
-	color: $text-color;
-	border-bottom: 1px solid transparent;
-	text-decoration: none;
-	transition: border-color .5s linear;
-}
-
-a:hover {
-	color: $text-color;
-	border-bottom: 1px solid $text-color;
-}
-
 @media (min-width: 550px) {
 	.photo, .img {
 		height: $large-photo-height;
 	}
 	ul {
 		padding: 0;
+		margin-bottom: 10%;
 	}
 	li {
 		width: 50%;
@@ -111,6 +137,7 @@ a:hover {
 	}
 	ul {
 		padding: 0 10%;
+		margin-bottom: 10%;
 	}
 	li {
 		width: 33.33333%;
